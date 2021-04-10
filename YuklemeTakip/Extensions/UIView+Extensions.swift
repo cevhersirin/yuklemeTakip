@@ -34,4 +34,29 @@ extension UIView {
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
     }
+    
+    func dropShadow() {
+        
+        layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowOpacity = 0.7
+        layer.shadowRadius = 5.0
+        //layer.shouldRasterize = true
+        layer.masksToBounds = false
+        
+        
+    }
+    
+    //OUTPUT 2
+    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offSet
+        layer.shadowRadius = radius
+        
+        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
 }

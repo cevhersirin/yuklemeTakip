@@ -31,6 +31,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmW-0u-SDO" customClass="CustomTopBar" customModule="YuklemeTakip" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="90" width="414" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Gp4-dE-Qez"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wf-WX-QbA" customClass="CustomNavBar" customModule="YuklemeTakip" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -44,6 +51,9 @@
                         <constraints>
                             <constraint firstItem="Zh5-sQ-ts1" firstAttribute="trailing" secondItem="5wf-WX-QbA" secondAttribute="trailing" id="6vS-s5-a7r"/>
                             <constraint firstItem="5wf-WX-QbA" firstAttribute="leading" secondItem="Zh5-sQ-ts1" secondAttribute="leading" id="Mkw-r5-DCy"/>
+                            <constraint firstItem="hmW-0u-SDO" firstAttribute="top" secondItem="5wf-WX-QbA" secondAttribute="bottom" id="cHG-wW-si9"/>
+                            <constraint firstItem="Zh5-sQ-ts1" firstAttribute="trailing" secondItem="hmW-0u-SDO" secondAttribute="trailing" id="q0s-7H-rFp"/>
+                            <constraint firstItem="hmW-0u-SDO" firstAttribute="leading" secondItem="Zh5-sQ-ts1" secondAttribute="leading" id="uhQ-rf-6WD"/>
                             <constraint firstItem="5wf-WX-QbA" firstAttribute="top" secondItem="gJd-re-4de" secondAttribute="top" id="v3G-s4-nOh"/>
                         </constraints>
                     </view>

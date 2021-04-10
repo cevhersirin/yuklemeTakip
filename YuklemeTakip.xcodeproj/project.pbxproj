@@ -17,6 +17,8 @@
 		FE109B522621CFF40035A2DC /* CustomNavBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE109B512621CFF40035A2DC /* CustomNavBar.xib */; };
 		FE109B552621D94A0035A2DC /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B542621D94A0035A2DC /* CustomNavBar.swift */; };
 		FE109B592621D9BF0035A2DC /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B582621D9BF0035A2DC /* UIView+Extensions.swift */; };
+		FE109B652621DF5D0035A2DC /* CustomTopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE109B642621DF5D0035A2DC /* CustomTopBar.xib */; };
+		FE109B682621E2070035A2DC /* CustomTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B672621E2070035A2DC /* CustomTopBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		FE109B512621CFF40035A2DC /* CustomNavBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavBar.xib; sourceTree = "<group>"; };
 		FE109B542621D94A0035A2DC /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		FE109B582621D9BF0035A2DC /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		FE109B642621DF5D0035A2DC /* CustomTopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTopBar.xib; sourceTree = "<group>"; };
+		FE109B672621E2070035A2DC /* CustomTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTopBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				FE109B512621CFF40035A2DC /* CustomNavBar.xib */,
 				FE109B542621D94A0035A2DC /* CustomNavBar.swift */,
+				FE109B642621DF5D0035A2DC /* CustomTopBar.xib */,
+				FE109B672621E2070035A2DC /* CustomTopBar.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 				FE109B412620F8FD0035A2DC /* LaunchScreen.storyboard in Resources */,
 				FE109B3E2620F8FD0035A2DC /* Assets.xcassets in Resources */,
 				FE109B522621CFF40035A2DC /* CustomNavBar.xib in Resources */,
+				FE109B652621DF5D0035A2DC /* CustomTopBar.xib in Resources */,
 				FE109B392620F8FC0035A2DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE109B682621E2070035A2DC /* CustomTopBar.swift in Sources */,
 				FE109B592621D9BF0035A2DC /* UIView+Extensions.swift in Sources */,
 				FE109B322620F8FC0035A2DC /* AppDelegate.swift in Sources */,
 				FE109B3C2620F8FC0035A2DC /* YuklemeTakip.xcdatamodeld in Sources */,
