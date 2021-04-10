@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pI7-iZ-8BO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Xv8-L4-8vI">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="pI7-iZ-8BO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T25-0a-MkU">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Wht-KC-CAY" kind="relationship" relationship="rootViewController" id="ZYM-zK-ck7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9y-Kg-yLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-636" y="136"/>
+        </scene>
+        <!--Shipment Detail View Controller-->
+        <scene sceneID="gdD-Fe-t63">
+            <objects>
+                <viewController id="Wht-KC-CAY" customClass="ShipmentDetailViewController" customModule="YuklemeTakip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gJd-re-4de">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wf-WX-QbA" customClass="CustomNavBar" customModule="YuklemeTakip" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="VJM-FV-kMY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zh5-sQ-ts1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zh5-sQ-ts1" firstAttribute="trailing" secondItem="5wf-WX-QbA" secondAttribute="trailing" id="6vS-s5-a7r"/>
+                            <constraint firstItem="5wf-WX-QbA" firstAttribute="leading" secondItem="Zh5-sQ-ts1" secondAttribute="leading" id="Mkw-r5-DCy"/>
+                            <constraint firstItem="5wf-WX-QbA" firstAttribute="top" secondItem="gJd-re-4de" secondAttribute="top" id="v3G-s4-nOh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mAH-I0-Vcb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Fe-ac-mPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="346" y="136"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

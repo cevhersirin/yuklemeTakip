@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		FE109B322620F8FC0035A2DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B312620F8FC0035A2DC /* AppDelegate.swift */; };
 		FE109B342620F8FC0035A2DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B332620F8FC0035A2DC /* SceneDelegate.swift */; };
-		FE109B362620F8FC0035A2DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B352620F8FC0035A2DC /* ViewController.swift */; };
 		FE109B392620F8FC0035A2DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE109B372620F8FC0035A2DC /* Main.storyboard */; };
 		FE109B3C2620F8FC0035A2DC /* YuklemeTakip.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE109B3A2620F8FC0035A2DC /* YuklemeTakip.xcdatamodeld */; };
 		FE109B3E2620F8FD0035A2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE109B3D2620F8FD0035A2DC /* Assets.xcassets */; };
 		FE109B412620F8FD0035A2DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE109B3F2620F8FD0035A2DC /* LaunchScreen.storyboard */; };
+		FE109B4E2621CF980035A2DC /* ShipmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B4D2621CF980035A2DC /* ShipmentDetailViewController.swift */; };
+		FE109B522621CFF40035A2DC /* CustomNavBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE109B512621CFF40035A2DC /* CustomNavBar.xib */; };
+		FE109B552621D94A0035A2DC /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B542621D94A0035A2DC /* CustomNavBar.swift */; };
+		FE109B592621D9BF0035A2DC /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B582621D9BF0035A2DC /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FE109B2E2620F8FC0035A2DC /* YuklemeTakip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YuklemeTakip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE109B312620F8FC0035A2DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE109B332620F8FC0035A2DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE109B352620F8FC0035A2DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE109B382620F8FC0035A2DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE109B3B2620F8FC0035A2DC /* YuklemeTakip.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YuklemeTakip.xcdatamodel; sourceTree = "<group>"; };
 		FE109B3D2620F8FD0035A2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE109B402620F8FD0035A2DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE109B422620F8FD0035A2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE109B4D2621CF980035A2DC /* ShipmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentDetailViewController.swift; sourceTree = "<group>"; };
+		FE109B512621CFF40035A2DC /* CustomNavBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavBar.xib; sourceTree = "<group>"; };
+		FE109B542621D94A0035A2DC /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		FE109B582621D9BF0035A2DC /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +64,51 @@
 		FE109B302620F8FC0035A2DC /* YuklemeTakip */ = {
 			isa = PBXGroup;
 			children = (
+				FE109B572621D9A50035A2DC /* Extensions */,
+				FE109B502621CFDE0035A2DC /* CustomViews */,
+				FE109B4A2621CE970035A2DC /* Modules */,
 				FE109B312620F8FC0035A2DC /* AppDelegate.swift */,
 				FE109B332620F8FC0035A2DC /* SceneDelegate.swift */,
-				FE109B352620F8FC0035A2DC /* ViewController.swift */,
-				FE109B372620F8FC0035A2DC /* Main.storyboard */,
 				FE109B3D2620F8FD0035A2DC /* Assets.xcassets */,
 				FE109B3F2620F8FD0035A2DC /* LaunchScreen.storyboard */,
 				FE109B422620F8FD0035A2DC /* Info.plist */,
 				FE109B3A2620F8FC0035A2DC /* YuklemeTakip.xcdatamodeld */,
 			);
 			path = YuklemeTakip;
+			sourceTree = "<group>";
+		};
+		FE109B4A2621CE970035A2DC /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FE109B4C2621CF5E0035A2DC /* ShipmentDetail */,
+				FE109B372620F8FC0035A2DC /* Main.storyboard */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FE109B4C2621CF5E0035A2DC /* ShipmentDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FE109B4D2621CF980035A2DC /* ShipmentDetailViewController.swift */,
+			);
+			path = ShipmentDetail;
+			sourceTree = "<group>";
+		};
+		FE109B502621CFDE0035A2DC /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FE109B512621CFF40035A2DC /* CustomNavBar.xib */,
+				FE109B542621D94A0035A2DC /* CustomNavBar.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		FE109B572621D9A50035A2DC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FE109B582621D9BF0035A2DC /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +170,7 @@
 			files = (
 				FE109B412620F8FD0035A2DC /* LaunchScreen.storyboard in Resources */,
 				FE109B3E2620F8FD0035A2DC /* Assets.xcassets in Resources */,
+				FE109B522621CFF40035A2DC /* CustomNavBar.xib in Resources */,
 				FE109B392620F8FC0035A2DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,10 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE109B362620F8FC0035A2DC /* ViewController.swift in Sources */,
+				FE109B592621D9BF0035A2DC /* UIView+Extensions.swift in Sources */,
 				FE109B322620F8FC0035A2DC /* AppDelegate.swift in Sources */,
 				FE109B3C2620F8FC0035A2DC /* YuklemeTakip.xcdatamodeld in Sources */,
 				FE109B342620F8FC0035A2DC /* SceneDelegate.swift in Sources */,
+				FE109B4E2621CF980035A2DC /* ShipmentDetailViewController.swift in Sources */,
+				FE109B552621D94A0035A2DC /* CustomNavBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
