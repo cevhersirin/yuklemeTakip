@@ -26,17 +26,24 @@ class PhotoAddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setStyle()
+        
         imgDatas.removeAll()
         self.photoCollectionView.delegate = self
         self.photoCollectionView.dataSource = self
         fetchImages()
+        self.setStyle()
     }
     
     func setStyle(){
-        self.imgTakePhoto.image = UIImage(systemName: "camera")
-        self.lblTakePhoto.text = "Fotoğraf Çek"
-        self.imgTakePhoto.tintColor = .black
+        if imgDatas.count == 0{
+            self.imgTakePhoto.image = UIImage(systemName: "camera")
+            self.lblTakePhoto.text = "Fotoğraf Çek"
+            self.imgTakePhoto.tintColor = .black
+        } else {
+            self.imgTakePhoto.image = UIImage(systemName: "arrow.counterclockwise")
+            self.lblTakePhoto.text = "Yeniden Çek"
+            self.imgTakePhoto.tintColor = .black
+        }
     }
     
     
