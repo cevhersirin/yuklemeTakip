@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMaps
+import CoreData
 
 class ShipmentDetailViewController: UIViewController {
 
@@ -21,16 +22,22 @@ class ShipmentDetailViewController: UIViewController {
     @IBOutlet weak var documentView: UIView!
     @IBOutlet weak var imgDocument: UIImageView!
     @IBOutlet weak var viewMap: UIView!
+    @IBOutlet weak var photoCollectionView: UICollectionView!
+    
+    var imgDatas: [Data] = []
     var mapView: GMSMapView!
     
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        photoCollectionView.delegate = self
+        photoCollectionView.dataSource = self
         
         self.setStyle()
         self.setDetailsData()
         self.setMapView()
+        self.fetchImages()
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imgDocument.addGestureRecognizer(tapGestureRecognizer)
@@ -39,8 +46,34 @@ class ShipmentDetailViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.fetchImages()
+    }
+    
     func setStyle(){
         self.documentView.dropShadow()
+    }
+    
+    func fetchImages(){
+        self.imgDatas.removeAll()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Photos")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            for result in results as! [NSManagedObject] {
+                if let datas = result.value(forKey: "photoData") as? [Data]{
+                    self.imgDatas = datas
+                }
+            }
+        } catch {
+            print("error")
+        }
+        self.photoCollectionView.reloadData()
     }
     
     func setMapView(){
@@ -76,20 +109,6 @@ class ShipmentDetailViewController: UIViewController {
         newImageView.addGestureRecognizer(tap)
         self.view.addSubview(newImageView)
     }
-//
-//    @IBAction func imageTapped(sender: UITapGestureRecognizer) {
-//        let imgDocument = sender.view as! UIImageView
-//        let newImageView = UIImageView(image: imgDocument.image)
-//        newImageView.frame = UIScreen.main.bounds
-//        newImageView.backgroundColor = .black
-//        newImageView.contentMode = .scaleAspectFit
-//        newImageView.isUserInteractionEnabled = true
-//        let tap = UITapGestureRecognizer(target: self, action: Selector(("dismissFullscreenImage:")))
-//        newImageView.addGestureRecognizer(tap)
-//        self.view.addSubview(newImageView)
-//        self.navigationController?.isNavigationBarHidden = true
-//        self.tabBarController?.tabBar.isHidden = true
-//    }
 
     @objc func dismissFullscreenImage(sender: UITapGestureRecognizer) {
         sender.view?.removeFromSuperview()
@@ -125,4 +144,27 @@ extension ShipmentDetailViewController: CLLocationManagerDelegate {
         // 8
         locationManager.stopUpdatingLocation()
     }
+}
+extension ShipmentDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        self.imgDatas.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoMainCollectionCell", for: indexPath) as! PhotoMainCollectionCell
+        
+        if let image = UIImage(data: imgDatas[indexPath.row]) {
+            cell.imgPhoto.image = image
+        }
+        return cell
+        
+        
+    }
+    
+    
+    
+}
+class PhotoMainCollectionCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imgPhoto: UIImageView!
 }
