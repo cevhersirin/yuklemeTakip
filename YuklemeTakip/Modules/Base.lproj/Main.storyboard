@@ -272,11 +272,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIL-Df-y8y">
                                 <rect key="frame" x="324" y="240" width="80" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0EQ-TF-fEl">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="document" translatesAutoresizingMaskIntoConstraints="NO" id="0EQ-TF-fEl">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="0EQ-TF-fEl" firstAttribute="leading" secondItem="KIL-Df-y8y" secondAttribute="leading" id="EMx-Vd-B6a"/>
                                     <constraint firstAttribute="trailing" secondItem="0EQ-TF-fEl" secondAttribute="trailing" id="Lsp-jx-xDT"/>
@@ -385,6 +385,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="mAH-I0-Vcb"/>
                     <connections>
+                        <outlet property="documentView" destination="KIL-Df-y8y" id="sfY-4q-dJv"/>
+                        <outlet property="imgDocument" destination="0EQ-TF-fEl" id="Aa6-tS-QkM"/>
                         <outlet property="infoDetail1" destination="eTA-QJ-lcL" id="hfx-EQ-Erh"/>
                         <outlet property="infoDetail2" destination="Jzh-Yc-bQn" id="WYf-QS-PSC"/>
                         <outlet property="infoDetail3" destination="P8d-fb-ZLM" id="fRH-0k-92J"/>
@@ -400,13 +402,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="document" width="257" height="339.5"/>
         <image name="menubar.arrow.up.rectangle" catalog="system" width="128" height="93"/>
         <image name="pinIcon" width="143" height="235"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

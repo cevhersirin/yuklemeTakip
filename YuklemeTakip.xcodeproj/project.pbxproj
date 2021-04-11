@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A27F14A00DD55FF7D8F51D1 /* Pods_YuklemeTakip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D29BFDFDA5AAD75FF426D6 /* Pods_YuklemeTakip.framework */; };
 		FE109B322620F8FC0035A2DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B312620F8FC0035A2DC /* AppDelegate.swift */; };
 		FE109B342620F8FC0035A2DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B332620F8FC0035A2DC /* SceneDelegate.swift */; };
 		FE109B392620F8FC0035A2DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE109B372620F8FC0035A2DC /* Main.storyboard */; };
@@ -25,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08F7E1D3E49C871540990FB8 /* Pods-YuklemeTakip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YuklemeTakip.release.xcconfig"; path = "Target Support Files/Pods-YuklemeTakip/Pods-YuklemeTakip.release.xcconfig"; sourceTree = "<group>"; };
+		83D29BFDFDA5AAD75FF426D6 /* Pods_YuklemeTakip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YuklemeTakip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADCD17AD65F14870C15A6FBA /* Pods-YuklemeTakip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YuklemeTakip.debug.xcconfig"; path = "Target Support Files/Pods-YuklemeTakip/Pods-YuklemeTakip.debug.xcconfig"; sourceTree = "<group>"; };
 		FE109B2E2620F8FC0035A2DC /* YuklemeTakip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YuklemeTakip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE109B312620F8FC0035A2DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE109B332620F8FC0035A2DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,17 +53,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A27F14A00DD55FF7D8F51D1 /* Pods_YuklemeTakip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59BEB7D1180E18F124347B99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADCD17AD65F14870C15A6FBA /* Pods-YuklemeTakip.debug.xcconfig */,
+				08F7E1D3E49C871540990FB8 /* Pods-YuklemeTakip.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6F598643015E6E84AACE1F9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83D29BFDFDA5AAD75FF426D6 /* Pods_YuklemeTakip.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FE109B252620F8FC0035A2DC = {
 			isa = PBXGroup;
 			children = (
 				FE109B302620F8FC0035A2DC /* YuklemeTakip */,
 				FE109B2F2620F8FC0035A2DC /* Products */,
+				59BEB7D1180E18F124347B99 /* Pods */,
+				6F598643015E6E84AACE1F9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +158,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE109B452620F8FD0035A2DC /* Build configuration list for PBXNativeTarget "YuklemeTakip" */;
 			buildPhases = (
+				56FBA8B4BC2BF0890CCEA3B0 /* [CP] Check Pods Manifest.lock */,
 				FE109B2A2620F8FC0035A2DC /* Sources */,
 				FE109B2B2620F8FC0035A2DC /* Frameworks */,
 				FE109B2C2620F8FC0035A2DC /* Resources */,
@@ -193,6 +219,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56FBA8B4BC2BF0890CCEA3B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YuklemeTakip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE109B2A2620F8FC0035A2DC /* Sources */ = {
@@ -351,17 +402,18 @@
 		};
 		FE109B462620F8FD0035A2DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADCD17AD65F14870C15A6FBA /* Pods-YuklemeTakip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2PB2K8A6Q9;
+				DEVELOPMENT_TEAM = 9HM6UUPFUC;
 				INFOPLIST_FILE = YuklemeTakip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cevher.YuklemeTakip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cevher.YuklemeTakibi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,17 +422,18 @@
 		};
 		FE109B472620F8FD0035A2DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08F7E1D3E49C871540990FB8 /* Pods-YuklemeTakip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2PB2K8A6Q9;
+				DEVELOPMENT_TEAM = 9HM6UUPFUC;
 				INFOPLIST_FILE = YuklemeTakip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cevher.YuklemeTakip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cevher.YuklemeTakibi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
