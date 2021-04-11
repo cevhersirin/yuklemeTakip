@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PhotoAddViewController: UIViewController {
     
@@ -29,6 +30,7 @@ class PhotoAddViewController: UIViewController {
         imgDatas.removeAll()
         self.photoCollectionView.delegate = self
         self.photoCollectionView.dataSource = self
+        fetchImages()
     }
     
     func setStyle(){
@@ -47,6 +49,16 @@ class PhotoAddViewController: UIViewController {
         self.openLoadOptions()
     }
     @IBAction func btnSendTapped(_ sender: Any) {
+        if imgDatas.count != 0 {
+            sendImages()
+        } else {
+            let alert = UIAlertController(title: "Hata", message: "Göndermek için fotoğraf seçmelisiniz", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Tamam", style: .default, handler: nil)
+            alert.addAction(alertAction)
+            present(alert, animated: true, completion: nil)
+        
+        }
+        
     }
     @IBAction func btnAddTapped(_ sender: Any) {
         self.isTakeAgaing = false
@@ -84,6 +96,48 @@ class PhotoAddViewController: UIViewController {
             self.imagePicker.sourceType = .photoLibrary
         }
         present(self.imagePicker, animated: true, completion: nil)
+    }
+    
+    func sendImages(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let photos = NSEntityDescription.insertNewObject(forEntityName: "Photos", into: context)
+        
+        photos.setValue(imgDatas, forKey: "photoData")
+        
+        do {
+            try context.save()
+            let alert = UIAlertController(title: "Başarılı", message: "Fotoğraflar başarıyla kaydedildi.", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Tamam", style: .default) { (UIAlertAction) in
+                self.navigationController?.popViewController(animated: true)
+            }
+            alert.addAction(alertAction)
+            present(alert, animated: true, completion: nil)
+        } catch {
+            print("error")
+        }
+    }
+    
+    func fetchImages(){
+        self.imgDatas.removeAll()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Photos")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            for result in results as! [NSManagedObject] {
+                if let datas = result.value(forKey: "photoData") as? [Data]{
+                    self.imgDatas = datas
+                }
+            }
+        } catch {
+            print("error")
+        }
+        self.photoCollectionView.reloadData()
     }
     
 }
