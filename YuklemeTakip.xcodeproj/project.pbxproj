@@ -162,6 +162,7 @@
 				FE109B2A2620F8FC0035A2DC /* Sources */,
 				FE109B2B2620F8FC0035A2DC /* Frameworks */,
 				FE109B2C2620F8FC0035A2DC /* Resources */,
+				46271061DB86B538E9F5D012 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,6 +222,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		46271061DB86B538E9F5D012 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YuklemeTakip/Pods-YuklemeTakip-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YuklemeTakip/Pods-YuklemeTakip-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YuklemeTakip/Pods-YuklemeTakip-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		56FBA8B4BC2BF0890CCEA3B0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

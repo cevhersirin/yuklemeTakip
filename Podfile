@@ -6,5 +6,7 @@ target 'YuklemeTakip' do
   use_frameworks!
 
   # Pods for YuklemeTakip
+  pod 'GoogleMaps', '4.2.0'
+  pod 'GooglePlaces', '4.2.0'
 
 end

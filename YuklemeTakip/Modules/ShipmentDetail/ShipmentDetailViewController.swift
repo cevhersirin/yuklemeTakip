@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class ShipmentDetailViewController: UIViewController {
 
@@ -19,19 +20,38 @@ class ShipmentDetailViewController: UIViewController {
     
     @IBOutlet weak var documentView: UIView!
     @IBOutlet weak var imgDocument: UIImageView!
+    @IBOutlet weak var viewMap: UIView!
+    var mapView: GMSMapView!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setStyle()
         self.setDetailsData()
+        self.setMapView()
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imgDocument.addGestureRecognizer(tapGestureRecognizer)
+        
+        
+        
     }
     
     func setStyle(){
         self.documentView.dropShadow()
+    }
+    
+    func setMapView(){
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 15.0)
+        self.mapView = GMSMapView.map(withFrame: self.viewMap.frame, camera: camera)
+        self.viewMap.addSubview(mapView)
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+
     }
     
     func setDetailsData(){
@@ -76,4 +96,33 @@ class ShipmentDetailViewController: UIViewController {
     }
    
 
+}
+
+extension ShipmentDetailViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        // 3
+        guard status == .authorizedWhenInUse else {
+            return
+        }
+        // 4
+        locationManager.startUpdatingLocation()
+
+        //5
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+        
+        // 7
+        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15.0, bearing: 0, viewingAngle: 0)
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        marker.snippet = "polarxp kıraç"
+        marker.map = mapView
+        // 8
+        locationManager.stopUpdatingLocation()
+    }
 }
