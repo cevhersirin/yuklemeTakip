@@ -66,5 +66,9 @@
 	<string>Light</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow Location to Map</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Kamera erişimi için izin veriniz.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Galeri erişimi için izin veriniz.</string>
 </dict>
 </plist>

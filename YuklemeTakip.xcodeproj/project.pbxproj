@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,9 @@
 		FE109B6B2621EC970035A2DC /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B6A2621EC970035A2DC /* RoundedUIView.swift */; };
 		FE109B6E2621FFD20035A2DC /* InfoDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE109B6D2621FFD20035A2DC /* InfoDetailView.xib */; };
 		FE109B71262200560035A2DC /* InfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109B70262200560035A2DC /* InfoDetailView.swift */; };
+		FE109BA7262342370035A2DC /* PhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE109BA6262342370035A2DC /* PhotoCollectionCell.xib */; };
+		FE109BAB262343E70035A2DC /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109BAA262343E70035A2DC /* PhotoCollectionCell.swift */; };
+		FE109BAF262347DE0035A2DC /* PhotoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE109BAE262347DE0035A2DC /* PhotoAddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		FE109B6A2621EC970035A2DC /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
 		FE109B6D2621FFD20035A2DC /* InfoDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoDetailView.xib; sourceTree = "<group>"; };
 		FE109B70262200560035A2DC /* InfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailView.swift; sourceTree = "<group>"; };
+		FE109BA6262342370035A2DC /* PhotoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionCell.xib; sourceTree = "<group>"; };
+		FE109BAA262343E70035A2DC /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
+		FE109BAE262347DE0035A2DC /* PhotoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +72,6 @@
 				ADCD17AD65F14870C15A6FBA /* Pods-YuklemeTakip.debug.xcconfig */,
 				08F7E1D3E49C871540990FB8 /* Pods-YuklemeTakip.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -115,6 +120,7 @@
 		FE109B4A2621CE970035A2DC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FE109BAD262347C90035A2DC /* Photo */,
 				FE109B4C2621CF5E0035A2DC /* ShipmentDetail */,
 				FE109B372620F8FC0035A2DC /* Main.storyboard */,
 			);
@@ -139,6 +145,8 @@
 				FE109B672621E2070035A2DC /* CustomTopBar.swift */,
 				FE109B6D2621FFD20035A2DC /* InfoDetailView.xib */,
 				FE109B70262200560035A2DC /* InfoDetailView.swift */,
+				FE109BA6262342370035A2DC /* PhotoCollectionCell.xib */,
+				FE109BAA262343E70035A2DC /* PhotoCollectionCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -149,6 +157,14 @@
 				FE109B582621D9BF0035A2DC /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FE109BAD262347C90035A2DC /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				FE109BAE262347DE0035A2DC /* PhotoAddViewController.swift */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +229,7 @@
 				FE109B412620F8FD0035A2DC /* LaunchScreen.storyboard in Resources */,
 				FE109B3E2620F8FD0035A2DC /* Assets.xcassets in Resources */,
 				FE109B522621CFF40035A2DC /* CustomNavBar.xib in Resources */,
+				FE109BA7262342370035A2DC /* PhotoCollectionCell.xib in Resources */,
 				FE109B652621DF5D0035A2DC /* CustomTopBar.xib in Resources */,
 				FE109B6E2621FFD20035A2DC /* InfoDetailView.xib in Resources */,
 				FE109B392620F8FC0035A2DC /* Main.storyboard in Resources */,
@@ -271,7 +288,9 @@
 				FE109B6B2621EC970035A2DC /* RoundedUIView.swift in Sources */,
 				FE109B682621E2070035A2DC /* CustomTopBar.swift in Sources */,
 				FE109B592621D9BF0035A2DC /* UIView+Extensions.swift in Sources */,
+				FE109BAF262347DE0035A2DC /* PhotoAddViewController.swift in Sources */,
 				FE109B322620F8FC0035A2DC /* AppDelegate.swift in Sources */,
+				FE109BAB262343E70035A2DC /* PhotoCollectionCell.swift in Sources */,
 				FE109B3C2620F8FC0035A2DC /* YuklemeTakip.xcdatamodeld in Sources */,
 				FE109B342620F8FC0035A2DC /* SceneDelegate.swift in Sources */,
 				FE109B71262200560035A2DC /* InfoDetailView.swift in Sources */,
